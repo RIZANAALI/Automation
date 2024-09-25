@@ -1,0 +1,9 @@
+import requests
+
+
+def get_weather(city,api_key,units):
+    url = f"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={api_key}&units={units}"
+    request = requests.get(url)
+    content = request.json()
+    print(content)
+get_weather("kannur", "62327088ca57d643c3f6c7fc97d6936c","standerd")
