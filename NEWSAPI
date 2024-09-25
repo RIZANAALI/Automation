@@ -1,0 +1,11 @@
+#"https://newsapi.org/v2/everything?qlnTitle=stock%20market&from={from_date}&to={to_date}&sortBy=popularity&language=en&apiKey={api_key}"
+
+
+import requests
+def get_news(city,api_key,from_date,to_date):
+    url=f"https://newsapi.org/v2/everything?qlnTitle=stock%20market&from={from_date}&to={to_date}&sortBy=popularity&language=en&apiKey={api_key}"
+
+    request = requests.get(url)
+
+    print()
+    get_news("kannur", "pub_54429426081a331c981ef4eef292a94d33dc1")
