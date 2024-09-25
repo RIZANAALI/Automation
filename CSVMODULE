@@ -1,0 +1,28 @@
+import csv
+from os import write
+#with open('stock_data_csv', 'r') as file:
+ #   reader = csv.DictReader(file)
+ #   for row in reader:
+ #       print(row)
+
+
+with open("output.csv",'w') as file:
+    writer = csv.writer(file,delimiter=":" )
+    writer.writerow(['name', 'age', 'city'])
+    writer.writerow(['safwana', '19', 'kannur'])
+    writer.writerow(['rizana','18','kannur'])
+
+with open("dictoutput.csv", 'w') as file:
+    fieldnames = (['name', 'age', 'city'])
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerow({'name':'safwana','age':19, 'city':'kannur'})
+    writer.writerow({'name':'rizana','age':18, 'city':'kannur'})
+
+try:
+    with open('stock_data.csv', 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            print(row)
+except csv.Error as e:
+    print(f'Error reading CSV file: {e}')
